@@ -67,12 +67,12 @@ resource "kubernetes_cron_job_v1" "mongodb_backup" {
             container {
               name            = "mongodump-gcs-cron"
               image           = "openrm/mongodump-gcs:latest"
-              env = {
-                name = GCS_BUCKET
+              env {
+                name = "GCS_BUCKET"
                 value = "backup_bucket_name"
               }
-              env = {
-                name = MONGO_URI
+              env {
+                name = "MONGO_URI"
                 value_from {
                   secret_key_ref {
                     name = "mongodb"
