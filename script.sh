@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eu
 
 workdir=/tmp
 filename=$(date +'%Y%m%d-%H%M')-$RANDOM.tar.gz
