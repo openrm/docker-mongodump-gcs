@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eu
 
-workdir=/tmp
+workdir=/var/tmp/backups
 filename=$(date +'%Y%m%d-%H%M')-$RANDOM.tar.gz
 
 echo "Exporting MongoDB data as $filename"
