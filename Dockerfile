@@ -8,9 +8,10 @@ RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.c
 
 WORKDIR /openrm
 
-RUN mkdir /backups
+RUN mkdir -p /var/tmp/backups
+RUN chmod 777 -R /var/tmp/backups
 ADD script.sh /openrm/script.sh
 
-VOLUME /backups
+VOLUME /var/tmp/backups
 
 ENTRYPOINT ["/openrm/script.sh"]
