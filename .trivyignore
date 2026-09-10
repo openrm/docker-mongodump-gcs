@@ -39,3 +39,12 @@ CVE-2026-56862 exp:2026-10-08 # stdlib
 CVE-2026-59869 exp:2026-10-08 # js-yaml
 CVE-2026-84375 exp:2026-10-08 # js-yaml
 GHSA-5p4m-2wfm-xmqj exp:2026-10-08 # js-yaml
+
+# Bundled with the google-cloud-cli apt package this Dockerfile installs
+# (for gsutil) - Python cryptography/msgpack/setuptools, all fixed
+# upstream but not yet bumped in the google-cloud-cli package itself.
+CVE-2025-47273 exp:2026-10-08 # setuptools
+CVE-2026-69247 exp:2026-10-08 # cryptography
+CVE-2026-69249 exp:2026-10-08 # cryptography
+GHSA-537c-gmf6-5ccf exp:2026-10-08 # cryptography
+GHSA-6v7p-g79w-8964 exp:2026-10-08 # msgpack
