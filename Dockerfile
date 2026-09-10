@@ -1,4 +1,4 @@
-FROM docker.io/mongo:8.0
+FROM docker.io/mongo:8
 MAINTAINER Open Room Inc. <tech@openrm.co.jp>
 
 RUN apt-get update && \
