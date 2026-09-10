@@ -1,1 +1,41 @@
-# Accepted-risk CVEs for this image, one per line: CVE-ID # reason, expires YYYY-MM-DD
+# Accepted-risk CVEs for this image, one per line:
+#   CVE-ID exp:YYYY-MM-DD # reason
+# `exp:` is a native Trivy feature - once the date passes, Trivy stops
+# honoring the entry and the scan fails again, so these don't rot silently.
+# Re-scan `mongo:8.0` before the expiry below; if upstream has rebuilt the
+# tag with a patched Go toolchain/openssl, drop the corresponding lines
+# instead of just pushing the date out.
+
+# Bundled Go toolchain (go1.24.6) inside the mongo:8.0 image itself, not
+# anything we build - dozens of stdlib CVEs, all "fixed" upstream in a
+# newer Go release that hasn't been rebuilt into this image tag yet.
+CVE-2025-61726 exp:2026-10-08 # stdlib
+CVE-2025-61729 exp:2026-10-08 # stdlib
+CVE-2025-68121 exp:2026-10-08 # stdlib (CRITICAL)
+CVE-2026-25679 exp:2026-10-08 # stdlib
+CVE-2026-27145 exp:2026-10-08 # stdlib
+CVE-2026-32280 exp:2026-10-08 # stdlib
+CVE-2026-32281 exp:2026-10-08 # stdlib
+CVE-2026-32283 exp:2026-10-08 # stdlib
+CVE-2026-33811 exp:2026-10-08 # stdlib
+CVE-2026-33814 exp:2026-10-08 # stdlib
+CVE-2026-33818 exp:2026-10-08 # stdlib
+CVE-2026-39820 exp:2026-10-08 # stdlib
+CVE-2026-39821 exp:2026-10-08 # stdlib
+CVE-2026-39822 exp:2026-10-08 # stdlib
+CVE-2026-39836 exp:2026-10-08 # stdlib
+CVE-2026-42499 exp:2026-10-08 # stdlib
+CVE-2026-42504 exp:2026-10-08 # stdlib
+CVE-2026-46600 exp:2026-10-08 # stdlib
+CVE-2026-56853 exp:2026-10-08 # stdlib
+CVE-2026-56854 exp:2026-10-08 # golang.org/x/crypto (CRITICAL)
+CVE-2026-56858 exp:2026-10-08 # stdlib
+CVE-2026-56859 exp:2026-10-08 # stdlib
+CVE-2026-56860 exp:2026-10-08 # stdlib
+CVE-2026-56862 exp:2026-10-08 # stdlib
+
+# Bundled js-yaml (mongosh tooling), same story - fixed upstream, not yet
+# rebuilt into this image tag.
+CVE-2026-59869 exp:2026-10-08 # js-yaml
+CVE-2026-84375 exp:2026-10-08 # js-yaml
+GHSA-5p4m-2wfm-xmqj exp:2026-10-08 # js-yaml
