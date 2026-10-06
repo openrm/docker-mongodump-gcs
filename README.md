@@ -6,7 +6,7 @@ This container is meant to be used as a cronjob with Kubernetes.
 The service account running the container needs to have write access to the destination bucket, as this container makes use of `gsutil`.
 
 # Volumes
-You can mount a volume on `/backups` if you want to collect the intermediate archives, or give more space to your container for the backup process.
+You can mount a volume on `/var/tmp/backups` if you want to collect the intermediate archives, or give more space to your container for the backup process.
 
 # Cron Schedule Syntax
 
